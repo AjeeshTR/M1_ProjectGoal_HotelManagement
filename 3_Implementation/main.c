@@ -7,12 +7,10 @@ void list();
 void edit();  //GLOBALLY DECLARED FUNCTIONS N VARIABLE
 void delete1();
 void search();
-
 void setcolor(int ForgC)
 { WORD wColor;
 HANDLE hStdOut=GetStdHandle(STD_OUTPUT_HANDLE);
 CONSOLE_SCREEN_BUFFER_INFO csbi;
-
 if(GetConsoleScreenBufferInfo(hStdOut,&amp;csbi))
 {
 	wColor=(csbi.wAttributes &amp; 0xB0)+(ForgC &amp; 0x0B);
@@ -21,7 +19,6 @@ if(GetConsoleScreenBufferInfo(hStdOut,&amp;csbi))
 }
 void login()
 {
-
 	int a=0,i=0;
     char uname&#91;10],c=' ';
     char pword&#91;10],code&#91;10];
@@ -30,8 +27,7 @@ void login()
     do
 {
 	system("cls");
-
-    printf("\n  **************************  LOGIN FORM  **************************  ");
+	printf("\n  **************************  LOGIN FORM  **************************  ");
     printf(" \n                       ENTER USERNAME:-");
 	scanf("%s", &amp;uname);
 	printf(" \n                       ENTER PASSWORD:-");
@@ -44,22 +40,17 @@ void login()
 	    i++;
 	}
 	pword&#91;i]='\0';
-	//char code=pword;
 	i=0;
-	//scanf("%s",&amp;pword);
 		if(strcmp(uname,user)==0 &amp;&amp; strcmp(pword,pass)==0)
 	{
 	printf("  \n\n\n       WELCOME !!!! LOGIN IS SUCCESSFUL");
-
 	break;
 	}
 	else
 	{
 		printf("\n        SORRY !!!!  LOGIN IS UNSUCESSFUL");
 		a++;
-
 		getch();
-
 	}
 }
 	while(a&lt;=2);
@@ -85,7 +76,6 @@ struct CustomerDetails   //STRUCTURE DECLARATION
 }s;
 int main(){     // MAIN FUNCTION
 	int i=0;
-
 	time_t t;
 	time(&amp;t);
 	char customername;
@@ -124,10 +114,9 @@ int main(){     // MAIN FUNCTION
 	    printf("\nCurrent date and time : %s",ctime(&amp;t));
 	    for(i=0;i&lt;80;i++)
 		printf("-");
-
 		choice=getche();
 		choice=toupper(choice);
-		switch(choice)           // SWITCH STATEMENT
+		switch(choice)           
 		{
 			case '1':
 				add();break;
@@ -143,7 +132,6 @@ int main(){     // MAIN FUNCTION
 				system("cls");
 				printf("\n\n\t *****THANK YOU*****");
 				printf("\n\t FOR TRUSTING OUR SERVICE");
-			//	Sleep(2000);
 				exit(0);
 				break;
 			default:
@@ -162,8 +150,8 @@ void add()
 	if(f==0)
 	{   f=fopen("add.txt","w+");
 		system("cls");
-		printf("Please hold on while we set our database in your computer!!");
-		printf("\n Process completed press any key to continue!! ");
+		printf("Please be patience while we set up!!");
+		printf("\n Process completed!!\n press any key to continue!! ");
 		getch();
 	}
 	while(1)
@@ -213,16 +201,10 @@ void list()
 	printf("\tEMAIL ");
 	printf("\t\t  PERIOD ");
 	printf("\t ARRIVALDATE \n");
-
 	for(i=0;i&lt;118;i++)
 		printf("-");
 	while(fread(&amp;s,sizeof(s),1,f)==1)
 	{
-		/*printf("ROOMNUMBER :\t%s\n",s.roomnumber);
-		printf("NAME:\t%s\n",,s.name);
-		printf("ADDRESS:\t%s\n",s.address);
-		printf("PHONENUMBER:\t%s\n",s.phonenumber);
-		printf("NATIONALITY \n");*/
 		printf("\n%s \t%s \t\t%s \t\t%s \t%s  \t%s  \t     %s  \t  %s",s.roomnumber, s.name , s.address , s.phonenumber ,s.nationality ,s.email,s.period,  s.arrivaldate);
 	}
 	printf("\n");

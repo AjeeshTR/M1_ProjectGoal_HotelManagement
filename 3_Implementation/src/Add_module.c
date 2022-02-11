@@ -6,8 +6,8 @@ void add()
 	if(f==0)
 	{   f=fopen("add.txt","w+");
 		system("cls");
-		printf("Please hold on while we set our database in your computer!!");
-		printf("\n Process completed press any key to continue!! ");
+		printf("Please be patience while we set up");
+		printf("\n Process completed!!\n Press any key to continue!! ");
 		getch();
 	}
 	while(1)

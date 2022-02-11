@@ -23,9 +23,7 @@ void login()
 	    i++;
 	}
 	pword&#91;i]='\0';
-	//char code=pword;
 	i=0;
-	//scanf("%s",&amp;pword);
 		if(strcmp(uname,user)==0 &amp;&amp; strcmp(pword,pass)==0)
 	{
 	printf("  \n\n\n       WELCOME !!!! LOGIN IS SUCCESSFUL");
